@@ -1,12 +1,15 @@
-import React from 'react';   // dependencies for JSX
+import React from 'react';
 import ReactDOM from 'react-dom';
+import SearchBar from './components/search_bar'
 
 const API_KEY = 'AIzaSyCsXdbPrzBFmlIYc017K28qw6LiH8Hm-iM'
 
 // create an functional component App
 const App = () => {
   return (
-    <div>Hello</div>
+    <div>
+      <SearchBar />
+    </div>
   )
   // NOTE JSX is transpiled into React.createElement(...)
 }
