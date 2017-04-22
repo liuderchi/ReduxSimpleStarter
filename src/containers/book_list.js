@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class BookList extends Component {
+class BookList extends Component {
   renderList() {
     return this.props.books.map((book) => {
       return (
@@ -21,3 +22,15 @@ export default class BookList extends Component {
 
   }
 }
+
+
+function mapStateToProps(state) {
+  // whatever returned will show up as props
+  // inside of BookList container
+  return {
+    books: state.books  // state is provided from reducers
+  }
+}
+
+// NOTE use connect to promote Component into redux container
+export default connect(mapStateToProps)(BookList);
