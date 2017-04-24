@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 class WeatherList extends Component {
   constructor(props) {
     super(props);
+
+  }
+
+  renderWeather(cityData) {    // render weather for each city
+    const { name } = cityData.city;
+    return (
+      <tr key={name}>
+        <td>{name}</td>
+      </tr>
+    )
   }
 
   render() {
@@ -19,6 +29,7 @@ class WeatherList extends Component {
           </tr>
         </thead>
         <tbody>
+          {this.props.weather.map(this.renderWeather)}
         </tbody>
       </table>
     )
