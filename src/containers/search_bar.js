@@ -13,9 +13,15 @@ class SearchBar extends Component {
     this.setState({ term: event.target.value});
   }
 
+  onFormSubmit(event) {
+    event.preventDefault();
+
+    // fetch weather data from API
+  }
+
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="get a 5-day forecast in your city"
           className="form-control"
