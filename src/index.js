@@ -1,6 +1,8 @@
 import React from 'react';   // dependencies for JSX
 import ReactDOM from 'react-dom';
 
+const API_KEY = 'AIzaSyCsXdbPrzBFmlIYc017K28qw6LiH8Hm-iM'
+
 // create an functional component App
 const App = () => {
   return (
