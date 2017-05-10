@@ -15,13 +15,21 @@ class PostsNew extends Component {
         Object Spread Properties syntax
           e.g. var obj = { id: 5, ...field.input})
       */}
+      {field.meta.error}
       </div>
     )
   }
 
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
-      <form>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        {/* NOTE call this.onSubmit only when passed validation */}
         <Field
           title="Title For Post"
           name="title"
@@ -37,6 +45,7 @@ class PostsNew extends Component {
           name="content"
           component={this.renderField}
         />
+      <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     )
   }
@@ -46,6 +55,7 @@ function validate(values) {    // values: current values from each Fields
   const errors = {};
 
   // validate 'values'
+  // NOTE prop of errors should be consistent with Field name
   if (!values.title) {
     errors.title = "Enter a title!";
   }
