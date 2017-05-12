@@ -15,7 +15,7 @@ class PostsNew extends Component {
         Object Spread Properties syntax
           e.g. var obj = { id: 5, ...field.input})
       */}
-      {field.meta.error}
+      {field.meta.touched ? field.meta.error : ''}
       </div>
     )
   }
