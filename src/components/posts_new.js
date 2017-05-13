@@ -30,7 +30,9 @@ class PostsNew extends Component {
   }
 
   onSubmit(values) {  // current values from each Fields
-    this.props.createPost(values);
+    this.props.createPost(values, () => {
+      this.props.history.push('/');
+    });
   }
 
   render() {
