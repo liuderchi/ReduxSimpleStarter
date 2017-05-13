@@ -3,8 +3,11 @@ import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component {
   renderField(field) {
+    const { meta: {touched, error, invalid} } = field;
+    const className = `form-group ${(touched && invalid) ? 'has-danger' : ''}`;
+
     return (
-      <div className="form-group">
+      <div className={className}>
         <label>{field.title}</label>
         <input
           className="form-control"
@@ -15,7 +18,9 @@ class PostsNew extends Component {
         Object Spread Properties syntax
           e.g. var obj = { id: 5, ...field.input})
       */}
-      {field.meta.touched ? field.meta.error : ''}
+        <div className="text-help">
+          {touched ? error : ''}
+        </div>
       </div>
     )
   }
