@@ -7,6 +7,7 @@ const API_KEY = 'derekliuliu';
 export const FETCH_POSTS = 'fetch_posts';
 export const CREATE_POST = 'create_post';
 export const FETCH_POST = 'fetch_post';
+export const DELETE_POST = 'delete_post';
 
 export function fetchPosts() {
   const request = axios.get(`${ROOT_URL}/posts?key=${API_KEY}`);
@@ -34,5 +35,15 @@ export function fetchPost(id) {
   return {
     type: FETCH_POST,
     payload: request
+  };
+}
+
+export function deletePost(id, callback) {
+  const request = axios.delete(`${ROOT_URL}/posts/${id}?key=${API_KEY}`)
+    .then(() => callback());
+
+  return {
+    type: DELETE_POST,
+    payload: id    // NOTE can we return request? (considering we have redux-promise)
   };
 }
