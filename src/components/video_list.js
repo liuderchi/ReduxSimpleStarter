@@ -8,6 +8,7 @@ const VideoList = (props) => {
         onVideoSelect={props.onVideoSelect}
         key={video.etag}
         video={video} />)
+    // NOTE passing onVideoSelect from parent prop, down into child component
   })
 
   return (

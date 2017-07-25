@@ -43,6 +43,7 @@ class App extends Component {
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
           videos={this.state.videos} />
+        (/* NOTE passing callback to child to make parent component rerender */)
       </div>
     )
   }
