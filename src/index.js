@@ -14,6 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props)
 
+    // NOTE app state
     this.state = {
       videos: [],
       selectedVideo: null

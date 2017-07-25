@@ -1,6 +1,7 @@
 import React from 'react'
 
 const VideoDetail = ({video}) => {
+  // handle init state
   if (!video) {
     return (<div>Loading...</div>)
   }
